@@ -34,8 +34,7 @@ const Home = () => {
 
 export const getServerSideProps = wrapper.getServerSideProps(({ store }) => {
 	const limit = store.getState().limit;
-	const API_URL = process.env.NEXT_PUBLIC_SPACEX_API_URL
-	const URL = `API_URL?limit=${limit}`
+	const URL = `https://api.spacexdata.com/v3/launches?limit=${limit}`
 	store.dispatch(fetchMissionsLaunchData(URL))
 });
 
